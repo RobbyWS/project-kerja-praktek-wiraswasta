@@ -89,6 +89,7 @@
     document.getElementById('form-sewa').addEventListener('submit', e => {
         e.preventDefault();
         alert('UI saja — proses simpan belum dibuat.');
+        // code submit
     });
 </script>
 @endsection
