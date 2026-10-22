@@ -19,9 +19,9 @@
             @php
                 $menu = [
                     ['label' => 'Dashboard',    'url' => route('admin.dashboard'),        'pola' => 'admin'],
-                    ['label' => 'Katalog Alat', 'url' => route('admin.alat.index'),       'pola' => 'admin/alat*'],
-                    ['label' => 'Inventaris',   'url' => route('admin.inventaris.index'), 'pola' => 'admin/inventaris*'],
-                    ['label' => 'Chat',         'url' => route('admin.chat'),             'pola' => 'admin/chat*'],
+                    ['label' => 'Katalog Alat', 'url' => route('admin.alat.index'),       'pola' => 'admin/alat'],
+                    ['label' => 'Inventaris',   'url' => route('admin.inventaris.index'), 'pola' => 'admin/inventaris'],
+                    ['label' => 'Chat',         'url' => route('admin.chat'),             'pola' => 'admin/chat'],
                 ];
             @endphp
 

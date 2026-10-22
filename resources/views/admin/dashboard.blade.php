@@ -4,14 +4,13 @@
 
 @section('content')
 
-    {{-- Sambutan --}}
     <div class="bg-gray-900 text-white rounded-xl p-6 mb-6">
         <p class="text-sm text-gray-400">Selamat datang,</p>
         <h2 class="text-2xl font-bold text-yellow-400">{{ auth()->user()->name }}</h2>
-        <p class="text-sm text-gray-300 mt-1">Panel admin PT. MARGODADI — kelola katalog alat berat dan balas pesan member dari sini.</p>
+        <p class="text-sm text-gray-300 mt-1">Panel admin PT. MARGODADI - kelola katalog alat berat dan balas pesan member dari sini.</p>
     </div>
 
-    {{-- Menu pintasan --}}
+    
     <div class="grid gap-4 sm:grid-cols-3">
         <a href="{{ route('admin.alat.index') }}"
            class="bg-white rounded-xl shadow-sm p-6 border-t-4 border-yellow-400 hover:shadow-md transition">
