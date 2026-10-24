@@ -37,14 +37,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->n
 
 // #region home routes
 Route::get('/', function () use ($alat) {
-    $keunggulan = [
-        ['ikon' => '🚜', 'judul' => 'Unit Terawat',     'deskripsi' => 'Perawatan rutin agar alat selalu siap kerja.'],
-        ['ikon' => '👷', 'judul' => 'Operator Ahli',    'deskripsi' => 'Operator berpengalaman dan bersertifikat.'],
-        ['ikon' => '🚚', 'judul' => 'Pengiriman Cepat', 'deskripsi' => 'Mobilisasi unit tepat waktu ke lokasi proyek.'],
-        ['ikon' => '📞', 'judul' => 'Respons Cepat',    'deskripsi' => 'Tim siap membantu kebutuhan Anda.'],
-    ];
 
-    return view('home', compact('keunggulan', 'alat'));
+
+    return view('home', compact('alat'));
 })->name('home');
 
 

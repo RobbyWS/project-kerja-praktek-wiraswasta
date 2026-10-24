@@ -37,13 +37,27 @@
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                @foreach ($keunggulan as $item)
                     <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-yellow-400">
-                        <p class="text-3xl mb-3">{{ $item['ikon'] }}</p>
-                        <h3 class="font-bold mb-1">{{ $item['judul'] }}</h3>
-                        <p class="text-sm text-gray-500">{{ $item['deskripsi'] }}</p>
+                        <p class="text-3xl mb-3">🚜</p>
+                        <h3 class="font-bold mb-1">Unit Terawat</h3>
+                        <p class="text-sm text-gray-500">Perawatan rutin agar alat selalu siap kerja.</p>
                     </div>
-                @endforeach
+                    <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-yellow-400">
+                        <p class="text-3xl mb-3">👷</p>
+                        <h3 class="font-bold mb-1">Operator Ahli</h3>
+                        <p class="text-sm text-gray-500">Operator berpengalaman dan bersertifikat.</p>
+                    </div>
+                                        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-yellow-400">
+                        <p class="text-3xl mb-3">🚚</p>
+                        <h3 class="font-bold mb-1">Pengiriman Cepat</h3>
+                        <p class="text-sm text-gray-500">Mobilisasi unit tepat waktu ke lokasi proyek.</p>
+                    </div>
+                                        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-yellow-400">
+                        <p class="text-3xl mb-3">📞</p>
+                        <h3 class="font-bold mb-1">Respons Cepat</h3>
+                        <p class="text-sm text-gray-500">Tim siap membantu kebutuhan Anda.</p>
+                    </div>
+
             </div>
         </div>
     </section>
