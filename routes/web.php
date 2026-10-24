@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InventarisController;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -83,15 +84,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/alat/create', fn () => view('admin.alat.create'))->name('alat.create');
 
     // Inventaris
-    $inventaris = [
-            ['kode' => 'INV-001', 'nama' => 'Filter Oli Mesin',      'kategori' => 'Suku Cadang', 'jumlah' => 24, 'satuan' => 'pcs',   'minimum' => 10, 'lokasi' => 'Gudang A - Rak 1', 'tanggal' => '05-10-2026'],
-            ['kode' => 'INV-002', 'nama' => 'Oli Hidrolik 20L',      'kategori' => 'Pelumas',     'jumlah' => 6,  'satuan' => 'drum',  'minimum' => 5,  'lokasi' => 'Gudang B',         'tanggal' => '08-10-2026'],
-            ['kode' => 'INV-003', 'nama' => 'Grease Pail',           'kategori' => 'Pelumas',     'jumlah' => 2,  'satuan' => 'pail',  'minimum' => 4,  'lokasi' => 'Gudang B',         'tanggal' => '10-10-2026'],
-            ['kode' => 'INV-004', 'nama' => 'Kunci Torsi Set',       'kategori' => 'Perkakas',    'jumlah' => 3,  'satuan' => 'set',   'minimum' => 1,  'lokasi' => 'Bengkel',          'tanggal' => '12-09-2026'],
-            ['kode' => 'INV-005', 'nama' => 'Bucket Teeth',          'kategori' => 'Suku Cadang', 'jumlah' => 0,  'satuan' => 'pcs',   'minimum' => 8,  'lokasi' => 'Gudang A - Rak 3', 'tanggal' => '01-09-2026'],
-            ['kode' => 'INV-006', 'nama' => 'Helm Safety',           'kategori' => 'Perlengkapan K3', 'jumlah' => 15, 'satuan' => 'pcs', 'minimum' => 10, 'lokasi' => 'Kantor',          'tanggal' => '15-10-2026'],
-            ];
-    Route::get('/inventaris',        fn () => view('admin.inventaris.index', ['inventaris' => $inventaris]))->name('inventaris.index');
+    Route::get('/inventaris', [InventarisController::class, 'index'])->name('inventaris.index');
     Route::get('/inventaris/create', fn () => view('admin.inventaris.create'))->name('inventaris.create');
 
     // Chat
