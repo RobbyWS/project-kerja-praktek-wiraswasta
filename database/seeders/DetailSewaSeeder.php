@@ -12,8 +12,17 @@ class DetailSewaSeeder extends Seeder
 {
     public function run(): void
     {
-        $sewa  = Sewa::orderBy('id')->get();
-        $alat  = AlatBerat::orderBy('id')->get();
+        $sewa = Sewa::orderBy('id')->get();
+        $alat = AlatBerat::orderBy('id')->get();
+
+        // #region debug info
+        $this->command->info("Jumlah sewa: {$sewa->count()}, jumlah alat: {$alat->count()}");
+        if ($sewa->isEmpty() || $alat->isEmpty()) {
+            throw new \RuntimeException(
+                "Data kosong — sewa: {$sewa->count()}, alat: {$alat->count()}"
+            );
+        }
+        // #endregion
 
         // [index sewa, index alat, tanggal awal, tanggal akhir, harga per hari]
         $data = [

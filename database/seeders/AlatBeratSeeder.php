@@ -16,10 +16,9 @@ class AlatBeratSeeder extends Seeder
             ['nama' => 'Wheel Loader',    'kategori' => 'Loader',    'jumlah' => 2],
             ['nama' => 'Dump Truck',      'kategori' => 'Truck',     'jumlah' => 6],
         ];
-        //random iki
 
         foreach ($data as $item) {
-            AlatBerat::create($item);
+            AlatBerat::create($item);   
         }
     }
 }

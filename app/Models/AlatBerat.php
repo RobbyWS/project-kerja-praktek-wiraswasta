@@ -4,7 +4,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class alat_berat extends Model
+
+class AlatBerat extends Model
 {
     protected $table = 'alat_berat';
 

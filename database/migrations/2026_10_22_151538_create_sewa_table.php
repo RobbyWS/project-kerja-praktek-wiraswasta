@@ -14,7 +14,7 @@ return new class extends Migration
     Schema::create('sewa', function (Blueprint $table) {
         $table->id();
         $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
-        $table->foreignId('alat_berat_id')->constrained('alat_berat')->restrictOnDelete();
+        // $table->foreignId('alat_berat_id')->constrained('alat_berat')->restrictOnDelete();
         $table->dateTime('tanggal_transaksi');
         $table->double('total');
         $table->timestamps();
