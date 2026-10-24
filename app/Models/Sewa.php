@@ -17,11 +17,8 @@ class Sewa extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function alatBerat(): BelongsToMany
+    public function alatBerat(): HasMany
     {
-        return $this->belongsToMany(AlatBerat::class, 'detail_sewa', 'sewa_id', 'alat_berat_id')
-            ->using(DetailSewa::class)
-            ->withPivot('id', 'tanggal_awal_sewa', 'tanggal_akhir_sewa', 'harga_per_hari', 'subtotal')
-            ->withTimestamps();
+        return $this->hasMany(DetailSewa::class, 'sewa_id');
     }
 }

@@ -11,11 +11,8 @@ class AlatBerat extends Model
 
     protected $fillable = ['nama', 'kategori', 'jumlah'];
 
-    public function sewa(): BelongsToMany
+    public function sewa(): HasMany
     {
-        return $this->belongsToMany(Sewa::class, 'detail_sewa', 'alat_berat_id', 'sewa_id')
-            ->using(DetailSewa::class)
-            ->withPivot('id', 'tanggal_awal_sewa', 'tanggal_akhir_sewa', 'harga_per_hari', 'subtotal')
-            ->withTimestamps();
+        return $this->hasMany(DetailSewa::class, 'alat_berat_id');
     }
 }
