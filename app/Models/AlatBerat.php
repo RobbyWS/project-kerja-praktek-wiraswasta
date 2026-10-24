@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class AlatBerat extends Model
 {
     protected $table = 'alat_berat';
-
-    protected $fillable = ['nama', 'kategori', 'jumlah'];
+    protected $fillable = ['nama', 'merek', 'kapasitas', 'harga', 'tersedia'];
 
     public function sewa(): HasMany
     {

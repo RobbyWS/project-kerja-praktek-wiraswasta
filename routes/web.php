@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -36,11 +37,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->n
 // #endregion
 
 // #region home routes
-Route::get('/', function () use ($alat) {
-
-
-    return view('home', compact('alat'));
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
